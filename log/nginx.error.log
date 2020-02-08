@@ -15,3 +15,12 @@
 2020/02/08 12:18:39 [info] 15384#15384: *19 client 177.25.144.109 closed keepalive connection
 2020/02/08 12:18:45 [info] 15384#15384: *23 client closed connection while waiting for request, client: 177.79.82.186, server: 0.0.0.0:8080
 2020/02/08 12:18:46 [info] 15384#15384: *21 client 177.79.82.186 closed keepalive connection
+2020/02/08 12:45:47 [info] 15384#15384: *25 client 66.79.99.246 closed keepalive connection
+2020/02/08 12:45:47 [info] 15384#15384: *27 client 66.79.99.246 closed keepalive connection
+2020/02/08 13:17:10 [info] 15384#15384: *29 client 127.0.0.1 closed keepalive connection
+2020/02/08 13:18:45 [info] 15384#15384: *31 client 127.0.0.1 closed keepalive connection
+2020/02/08 13:20:14 [info] 15384#15384: *33 client 127.0.0.1 closed keepalive connection
+2020/02/08 13:21:24 [info] 15384#15384: *37 client closed connection while waiting for request, client: 177.25.144.35, server: 0.0.0.0:8080
+2020/02/08 13:21:31 [info] 15384#15384: *35 client 177.79.82.156 closed keepalive connection
+2020/02/08 13:24:18 [info] 15384#15384: *43 client closed connection while waiting for request, client: 192.168.0.38, server: 0.0.0.0:8080
+2020/02/08 14:27:46 [info] 15384#15384: *45 client 74.82.47.5 closed keepalive connection
