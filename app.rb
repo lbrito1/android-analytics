@@ -8,7 +8,7 @@ configure {
 
 class Pumatra < Sinatra::Base
   get '/' do
-    return 'It works!'
+    return "This is Puma through nginx. Time now: #{Time.new}"
   end
 
   run! if app_file == $0

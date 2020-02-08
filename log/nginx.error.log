@@ -7,3 +7,11 @@
 2020/02/08 12:04:34 [crit] 15384#15384: *7 connect() to unix:///data/data/com.termux/files/home/android-sinatra/tmp/puma/socket failed (2: No such file or directory) while connecting to upstream, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://unix:///data/data/com.termux/files/home/android-sinatra/tmp/puma/socket:/", host: "localhost:8080"
 2020/02/08 12:04:34 [info] 15384#15384: *7 client 127.0.0.1 closed keepalive connection
 2020/02/08 12:14:11 [info] 15384#15384: *9 client 127.0.0.1 closed keepalive connection
+2020/02/08 12:17:38 [info] 15384#15384: *11 client 127.0.0.1 closed keepalive connection
+2020/02/08 12:18:02 [crit] 15384#15384: *13 connect() to unix:///data/data/com.termux/files/home/android-sinatra/tmp/puma/socket failed (2: No such file or directory) while connecting to upstream, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://unix:///data/data/com.termux/files/home/android-sinatra/tmp/puma/socket:/", host: "localhost:8080"
+2020/02/08 12:18:02 [info] 15384#15384: *13 client 127.0.0.1 closed keepalive connection
+2020/02/08 12:18:07 [info] 15384#15384: *15 client 127.0.0.1 closed keepalive connection
+2020/02/08 12:18:10 [info] 15384#15384: *17 client 127.0.0.1 closed keepalive connection
+2020/02/08 12:18:39 [info] 15384#15384: *19 client 177.25.144.109 closed keepalive connection
+2020/02/08 12:18:45 [info] 15384#15384: *23 client closed connection while waiting for request, client: 177.79.82.186, server: 0.0.0.0:8080
+2020/02/08 12:18:46 [info] 15384#15384: *21 client 177.79.82.186 closed keepalive connection
