@@ -1,5 +1,5 @@
 source 'https://rubygems.org' do
-  ruby '~> 2.7.0'
+  ruby '~> 2.6.5'
 
   gem 'puma'
   gem 'sinatra'
