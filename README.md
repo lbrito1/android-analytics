@@ -1,5 +1,7 @@
 ## Creating DB user and database
 
+### Test
+
 `sudo -u postgres bash`
 
 Then create user:
@@ -22,6 +24,11 @@ sudo -u postgres bash
 # psql
 =# create database test;
 ```
+
+### Android
+
+
+## Step 2
 
 
 Then run `bundle exec ruby create_db.rb`
