@@ -2,6 +2,9 @@
 
 require 'sinatra'
 require 'byebug'
+require 'awesome_print'
+
+require_relative 'constants'
 require_relative 'db'
 
 configure {
@@ -14,7 +17,8 @@ class Pumatra < Sinatra::Base
   end
 
   post '/' do
-    word = params[:word]
+    puts params
+    byebug
     DB[:test_entry].insert(:test_string => word)
     return "Inserted #{word}"
   end
