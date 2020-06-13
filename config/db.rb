@@ -1,4 +1,5 @@
 require 'sequel'
+require_relative '../.test_credentials_secret' # Test environment only
 
 DB = Sequel.connect(
   adapter: :postgres,
