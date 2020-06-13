@@ -1,13 +1,8 @@
 require_relative 'db'
 
-puts 'Running one-time DB creation...'
+puts 'Running DB creation...'
 
-DB.create_table :test_entry do
-  primary_key :id
-  String :test_string
-end
-
-DB.create_table :hits do
+DB.create_table? :hits do
   primary_key :id
   DateTime :created_at
   String :url
@@ -16,6 +11,5 @@ DB.create_table :hits do
   # String :country
   # String :device
 end
-
 
 puts 'Done.'
