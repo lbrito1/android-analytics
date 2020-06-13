@@ -12,6 +12,11 @@ configure {
 }
 
 class Pumatra < Sinatra::Base
+  before do
+    # TODO
+    headers 'Access-Control-Allow-Origin' => '*'
+  end
+
   get '/' do
     return "<h1>Hello world!</h1><p>This is Puma through nginx. Time is now: #{Time.new}</p>"
   end
