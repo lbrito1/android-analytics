@@ -7,6 +7,10 @@ configure {
 }
 
 class Pumatra < Sinatra::Base
+   configure :production, :development do
+     enable :logging
+   end
+
   before do
     # TODO
     headers 'Access-Control-Allow-Origin' => '*'

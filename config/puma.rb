@@ -7,4 +7,6 @@ rackup "#{root}/config.ru"
 
 threads 4, 8
 
+log_requests
+
 activate_control_app
