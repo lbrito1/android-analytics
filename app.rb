@@ -5,7 +5,7 @@ require 'byebug'
 require 'awesome_print'
 
 require_relative 'constants'
-require_relative 'db'
+require_relative 'config/db'
 
 configure {
   set :server, :puma
