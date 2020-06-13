@@ -1,4 +1,11 @@
+## NGINX
+
+### Proxying client ip
+
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
 ## Creating DB user and database
+
 
 ### Test
 

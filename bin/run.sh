@@ -1,4 +1,7 @@
-nginx -c $HOME/android-sinatra/config/nginx.conf
+ln -s $HOME/android-sinatra/config/nginx.conf $PREFIX/etc/nginx/nginx.conf
+
+killlall nginx
+nginx
 
 pg_ctl -D $PREFIX/var/lib/postgresql start
 
