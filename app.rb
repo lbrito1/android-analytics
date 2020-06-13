@@ -22,10 +22,12 @@ class Pumatra < Sinatra::Base
   end
 
   post '/' do
-    puts params
-    byebug
-    DB[:test_entry].insert(:test_string => word)
-    return "Inserted #{word}"
+    ip = request.env["HTTP_FORWARDED"]&.gsub("for=", "")
+    ua = request.env["HTTP_USER_AGENT"]
+    url = request.env.dig("rack.request.form_hash", "url")
+    DB[:hits].insert(created_at: Time.now.utc, ip: ip, user_agent: ua, url: url)
+
+    status 200
   end
 
   run! if app_file == $0
