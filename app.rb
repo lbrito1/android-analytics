@@ -18,7 +18,7 @@ class Pumatra < Sinatra::Base
     headers 'Access-Control-Allow-Origin' => '*'
   end
 
-  get '/' do
+  get '/hello' do
     return "<h1>Hello world!</h1><p>Time is now: #{Time.new}</p>"
   end
 
