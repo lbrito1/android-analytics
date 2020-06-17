@@ -23,9 +23,15 @@ class Pumatra < Sinatra::Base
   end
 
   post '/update-blog-stats' do
+    token = request.env.dig("rack.request.form_hash", "token")
+    return status(400) unless token == SUPER_SECRET_TOKEN
+
+
     ip = request.env["HTTP_FORWARDED"]&.gsub("for=", "")
     ua = request.env["HTTP_USER_AGENT"]
+
     url = request.env.dig("rack.request.form_hash", "url")
+
     DB[:hits].insert(created_at: Time.now.utc, ip: ip, user_agent: ua, url: url)
 
     status 200

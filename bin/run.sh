@@ -1,3 +1,5 @@
+export SINATRA_TOKEN=xxx
+
 ln -sf $HOME/android-sinatra/config/nginx.conf $PREFIX/etc/nginx/nginx.conf
 
 killall nginx

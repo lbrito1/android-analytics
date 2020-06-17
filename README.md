@@ -1,3 +1,7 @@
+## Setting up
+
+Need to run `export SINATRA_TOKEN=xxx`
+
 ### NGINX
 
 Testing helper: https://nginx.viraptor.info/
