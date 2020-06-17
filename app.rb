@@ -19,10 +19,10 @@ class Pumatra < Sinatra::Base
   end
 
   get '/' do
-    return "<h1>Hello world!</h1><p>This is Puma through nginx. Time is now: #{Time.new}</p>"
+    return "<h1>Hello world!</h1><p>Time is now: #{Time.new}</p>"
   end
 
-  post '/' do
+  post '/update-blog-stats' do
     ip = request.env["HTTP_FORWARDED"]&.gsub("for=", "")
     ua = request.env["HTTP_USER_AGENT"]
     url = request.env.dig("rack.request.form_hash", "url")
