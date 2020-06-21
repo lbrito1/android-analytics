@@ -9,17 +9,12 @@ configure {
 }
 
 class Pumatra < Sinatra::Base
-   configure :production, :development do
-     enable :logging
-   end
-
   before do
-    # TODO
     headers 'Access-Control-Allow-Origin' => '*'
   end
 
   get '/hello' do
-    return "<h1>Hello world!</h1><p>Time is now: #{Time.new}</p>"
+    "<h1>Hello world!</h1><p>Time is now: #{Time.new}</p>"
   end
 
   post '/update-blog-stats' do
