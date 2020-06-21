@@ -6,8 +6,6 @@ class AddConstraints < Sequel::Migration
       String :url
       String :ip # convert to country later
       String :user_agent # convert to device later
-      # String :country
-      # String :device
     end
   end
 
