@@ -1,8 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/sh
-cd /data/data/com.termux/files/home/android-sinatra
-ruby -e "File.write('bbb', 'bbb')"
-# ruby -e "require_relative ''"
+PROJECT=/data/data/com.termux/files/home/android-sinatra
+BUNDLE=/data/data/com.termux/files/usr/bin/bundle
+cd $PROJECT
 
-
-# class Compiler
-#   def self.update_geo_info
+BUNDLE exec ruby -e "File.write('bbb', 'bbb'); require '$PROJECT/bin/compiler'; Compiler.update_geo_info"
