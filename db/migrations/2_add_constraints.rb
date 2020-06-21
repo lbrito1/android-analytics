@@ -10,7 +10,7 @@ class AddConstraints < Sequel::Migration
   def down
     alter_table :hits do
       drop_constraint(:url_length)
-      drop_constraint(:ip_length)
+      # drop_constraint(:ip_length)
       drop_constraint(:user_agent_length)
     end
   end

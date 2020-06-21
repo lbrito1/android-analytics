@@ -1,4 +1,4 @@
 require_relative '../config/db'
 
 Sequel.extension(:migration)
-Sequel::Migrator.run(DB, "db/migrations")
+Sequel::Migrator.run(DB, "db/migrations", target: 0)
