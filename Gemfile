@@ -4,6 +4,7 @@ source 'https://rubygems.org' do
   gem 'sequel'
   gem 'pg'
   gem 'geocoder'
+  gem 'whenever', require: false
 
   # debug
   gem 'byebug'
