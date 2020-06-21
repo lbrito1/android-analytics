@@ -12,10 +12,12 @@ class Compiler
       puts "Updating hit from #{hit.ip}... (#{i += 1}/#{count})"
       next unless geo_info = Geocoder.search(hit.ip).first
 
-      geo_info = geo_info.data.slice(%w(country region city))
-      anonnymized_ip = Digest::MD5.hexdigest(hit.ip)
-
-      hit.update(geo_info.merge(ip: anonnymized_ip))
+      hit.update(
+        country: geo_info.country,
+        region: geo_info.region,
+        city: geo_info.city,
+        ip: Digest::MD5.hexdigest(hit.ip)
+      )
     end
   end
 end
