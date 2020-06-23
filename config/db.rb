@@ -1,6 +1,5 @@
 require 'sequel'
 require_relative '../.test_credentials_secret' # Test environment only
-require_relative './models/hits'
 
 DB = Sequel.connect(
   adapter: :postgres,
@@ -8,3 +7,5 @@ DB = Sequel.connect(
   host: ENV['ANDROID_DATABASE_HOST'],
   user: ENV['ANDROID_DATABASE_USER'],
   password: ENV['ANDROID_DATABASE_PASSWORD'])
+
+require_relative '../app/models/hits'
