@@ -1,7 +1,6 @@
 require 'digest'
 require 'geocoder'
 require_relative '../config/db'
-require_relative './models/hits'
 
 class Compiler
   def self.update_geo_info
