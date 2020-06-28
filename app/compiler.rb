@@ -1,3 +1,4 @@
+require_relative '../config/db'
 require 'digest'
 require 'geocoder'
 require 'csv'
@@ -10,6 +11,7 @@ class Compiler
   OUTPUT_FILE = './log/compiler.output'
 
   def initialize(path)
+    Geocoder.configure(timeout: 10)
     @path = path
   end
 
