@@ -1,24 +1,50 @@
-# README
+## Setting up
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Need to run `export SINATRA_TOKEN=xxx`
 
-Things you may want to cover:
+### DB
 
-* Ruby version
+Create password on android
+ANDROID_SANDBOX_DATABASE_PASSWORD=
 
-* System dependencies
+### NGINX
 
-* Configuration
+Testing helper: https://nginx.viraptor.info/
 
-* Database creation
+### Proxying client ip
 
-* Database initialization
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 
-* How to run the test suite
+## Creating DB user and database
 
-* Services (job queues, cache servers, search engines, etc.)
+### Development
 
-* Deployment instructions
+`sudo -u postgres bash`
 
-* ...
+Then create user:
+
+`createuser --interactive --pwprompt`
+
+Using these creds for test env:
+
+```ruby
+ENV['ANDROID_DATABASE_NAME'] = "test"
+ENV['ANDROID_DATABASE_HOST'] = "localhost"
+ENV['ANDROID_DATABASE_USER'] = "test"
+ENV['ANDROID_DATABASE_PASSWORD'] = "123456"
+```
+
+Then create the database:
+
+```
+sudo -u postgres bash
+# psql
+=# create database test;
+```
+
+Then run `bundle exec ruby create_db.rb`
+
+## Testing POST
+
+Test POST/insert: `curl localhost:4567 -XPOST -d 'word=foobar'`
+
