@@ -1,5 +1,3 @@
-export SINATRA_TOKEN=xxx
-
 BUNDLE=`which bundle`
 
 ln -sf `pwd`/config/nginx.conf $PREFIX/etc/nginx/nginx.conf
@@ -12,7 +10,3 @@ then
   pg_ctl -D $PREFIX/var/lib/postgresql start
 fi
 $BUNDLE install --path vendor/bundle
-
-mkdir -p tmp/puma
-
-$BUNDLE exec ruby `which puma` --config ./config/puma.rb
