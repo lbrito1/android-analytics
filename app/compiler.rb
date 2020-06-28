@@ -6,7 +6,7 @@ require 'byebug'
 class Compiler
   HEADERS = %i(ip created_at request status body_bytes_sent url user_agent
     http_x_forwarded_for request_time)
-  OUTPUT_FILE = './log/compiler'
+  OUTPUT_FILE = './log/compiler.output'
 
   def initialize(path)
     @path = path
