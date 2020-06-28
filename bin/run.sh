@@ -1,4 +1,4 @@
-ln -sf $HOME/android-sinatra/config/nginx.conf $PREFIX/etc/nginx/nginx.conf
+ln -sf `pwd`/config/nginx.conf $PREFIX/etc/nginx/nginx.conf
 
 if pgrep -x "nginx" > /dev/null
 then
