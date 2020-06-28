@@ -2,8 +2,7 @@ export SINATRA_TOKEN=xxx
 
 BUNDLE=`which bundle`
 
-ln -sf $HOME/android-sinatra/config/nginx.conf $PREFIX/etc/nginx/nginx.conf
-
+ln -sf `pwd`/config/nginx.conf $PREFIX/etc/nginx/nginx.conf
 killall nginx
 nginx
 
