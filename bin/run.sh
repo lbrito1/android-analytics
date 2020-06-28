@@ -1,3 +1,5 @@
+ANDROID_SANDBOX_DATABASE_PASSWORD=changeme
+
 BUNDLE=`which bundle`
 PUMA=`which puma`
 ln -sf `pwd`/config/nginx.conf $PREFIX/etc/nginx/nginx.conf
