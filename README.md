@@ -7,6 +7,8 @@ Need to run `export SINATRA_TOKEN=xxx`
 Create password on android
 ANDROID_SANDBOX_DATABASE_PASSWORD=
 
+RAILS_ENV=production bin/rails db:migrate
+
 ### NGINX
 
 Testing helper: https://nginx.viraptor.info/

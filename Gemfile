@@ -7,6 +7,7 @@ gem 'rails', '~> 5.2.4'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'tzinfo-data'
+gem 'uglifier'
 
 # Application-specific
 gem 'blazer'
