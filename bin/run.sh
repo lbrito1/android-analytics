@@ -1,5 +1,3 @@
-export SINATRA_TOKEN=xxx
-
 ln -sf $HOME/android-sinatra/config/nginx.conf $PREFIX/etc/nginx/nginx.conf
 
 if pgrep -x "nginx" > /dev/null
@@ -10,6 +8,7 @@ else
   echo "Starting nginx..."
   pg_ctl -D $PREFIX/var/lib/postgresql start
 fi
+
 nginx
 
 if ! pgrep -x "postgres" > /dev/null
@@ -19,6 +18,7 @@ then
 fi
 bundle install --path vendor/bundle
 
+mkdir -p tmp/pids
 mkdir -p tmp/puma
 
-bundle exec ruby `which puma` --config ./config/puma.rb
+RAILS_ENV=production bundle exec puma -C config/puma.rb

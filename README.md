@@ -1,45 +1,24 @@
-## Setting up
+# README
 
-Need to run `export SINATRA_TOKEN=xxx`
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-### NGINX
+Things you may want to cover:
 
-Testing helper: https://nginx.viraptor.info/
+* Ruby version
 
-### Proxying client ip
+* System dependencies
 
-proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+* Configuration
 
-## Creating DB user and database
+* Database creation
 
-### Development
+* Database initialization
 
-`sudo -u postgres bash`
+* How to run the test suite
 
-Then create user:
+* Services (job queues, cache servers, search engines, etc.)
 
-`createuser --interactive --pwprompt`
+* Deployment instructions
 
-Using these creds for test env:
-
-```ruby
-ENV['ANDROID_DATABASE_NAME'] = "test"
-ENV['ANDROID_DATABASE_HOST'] = "localhost"
-ENV['ANDROID_DATABASE_USER'] = "test"
-ENV['ANDROID_DATABASE_PASSWORD'] = "123456"
-```
-
-Then create the database:
-
-```
-sudo -u postgres bash
-# psql
-=# create database test;
-```
-
-Then run `bundle exec ruby create_db.rb`
-
-## Testing POST
-
-Test POST/insert: `curl localhost:4567 -XPOST -d 'word=foobar'`
-
+* ...

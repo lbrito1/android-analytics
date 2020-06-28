@@ -1,11 +1,5 @@
-#!/usr/bin/env ruby
+# This file is used by Rack-based servers to start the application.
 
+require_relative 'config/environment'
 
-require 'awesome_print'
-require 'byebug'
-
-require_relative 'constants'
-require_relative 'config/db'
-require_relative 'app'
-
-run Pumatra
+run Rails.application
