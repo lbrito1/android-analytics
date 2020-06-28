@@ -89,3 +89,69 @@
 2020/06/28 15:27:58 [emerg] 28471#28471: bind() to 0.0.0.0:8080 failed (98: Address already in use)
 2020/06/28 15:27:58 [emerg] 28471#28471: bind() to 0.0.0.0:8443 failed (98: Address already in use)
 2020/06/28 15:27:58 [emerg] 28471#28471: still could not bind()
+2020/06/28 15:48:51 [emerg] 12861#12861: bind() to 0.0.0.0:8080 failed (98: Unknown error)
+2020/06/28 15:48:51 [emerg] 12861#12861: bind() to 0.0.0.0:8443 failed (98: Unknown error)
+2020/06/28 15:48:51 [emerg] 12861#12861: bind() to 0.0.0.0:8080 failed (98: Unknown error)
+2020/06/28 15:48:51 [emerg] 12861#12861: bind() to 0.0.0.0:8443 failed (98: Unknown error)
+2020/06/28 15:48:51 [emerg] 12861#12861: bind() to 0.0.0.0:8080 failed (98: Unknown error)
+2020/06/28 15:48:51 [emerg] 12861#12861: bind() to 0.0.0.0:8443 failed (98: Unknown error)
+2020/06/28 15:48:51 [emerg] 12861#12861: bind() to 0.0.0.0:8080 failed (98: Unknown error)
+2020/06/28 15:48:51 [emerg] 12861#12861: bind() to 0.0.0.0:8443 failed (98: Unknown error)
+2020/06/28 15:48:51 [emerg] 12861#12861: bind() to 0.0.0.0:8080 failed (98: Unknown error)
+2020/06/28 15:48:51 [emerg] 12861#12861: bind() to 0.0.0.0:8443 failed (98: Unknown error)
+2020/06/28 15:48:51 [emerg] 12861#12861: still could not bind()
+2020/06/28 15:49:31 [emerg] 12896#12896: bind() to 0.0.0.0:8080 failed (98: Unknown error)
+2020/06/28 15:49:31 [emerg] 12896#12896: bind() to 0.0.0.0:8443 failed (98: Unknown error)
+2020/06/28 15:49:31 [emerg] 12896#12896: bind() to 0.0.0.0:8080 failed (98: Unknown error)
+2020/06/28 15:49:31 [emerg] 12896#12896: bind() to 0.0.0.0:8443 failed (98: Unknown error)
+2020/06/28 15:49:31 [emerg] 12896#12896: bind() to 0.0.0.0:8080 failed (98: Unknown error)
+2020/06/28 15:49:31 [emerg] 12896#12896: bind() to 0.0.0.0:8443 failed (98: Unknown error)
+2020/06/28 15:49:31 [emerg] 12896#12896: bind() to 0.0.0.0:8080 failed (98: Unknown error)
+2020/06/28 15:49:31 [emerg] 12896#12896: bind() to 0.0.0.0:8443 failed (98: Unknown error)
+2020/06/28 15:49:31 [emerg] 12896#12896: bind() to 0.0.0.0:8080 failed (98: Unknown error)
+2020/06/28 15:49:31 [emerg] 12896#12896: bind() to 0.0.0.0:8443 failed (98: Unknown error)
+2020/06/28 15:49:31 [emerg] 12896#12896: still could not bind()
+2020/06/28 15:53:12 [emerg] 12945#12945: bind() to 0.0.0.0:8080 failed (98: Unknown error)
+2020/06/28 15:53:12 [emerg] 12945#12945: bind() to 0.0.0.0:8443 failed (98: Unknown error)
+2020/06/28 15:53:12 [emerg] 12945#12945: bind() to 0.0.0.0:8080 failed (98: Unknown error)
+2020/06/28 15:53:12 [emerg] 12945#12945: bind() to 0.0.0.0:8443 failed (98: Unknown error)
+2020/06/28 15:53:12 [emerg] 12945#12945: bind() to 0.0.0.0:8080 failed (98: Unknown error)
+2020/06/28 15:53:12 [emerg] 12945#12945: bind() to 0.0.0.0:8443 failed (98: Unknown error)
+2020/06/28 15:53:12 [emerg] 12945#12945: bind() to 0.0.0.0:8080 failed (98: Unknown error)
+2020/06/28 15:53:12 [emerg] 12945#12945: bind() to 0.0.0.0:8443 failed (98: Unknown error)
+2020/06/28 15:53:12 [emerg] 12945#12945: bind() to 0.0.0.0:8080 failed (98: Unknown error)
+2020/06/28 15:53:12 [emerg] 12945#12945: bind() to 0.0.0.0:8443 failed (98: Unknown error)
+2020/06/28 15:53:12 [emerg] 12945#12945: still could not bind()
+2020/06/28 15:54:06 [emerg] 12975#12975: bind() to 0.0.0.0:8080 failed (98: Unknown error)
+2020/06/28 15:54:06 [emerg] 12975#12975: bind() to 0.0.0.0:8443 failed (98: Unknown error)
+2020/06/28 15:54:06 [emerg] 12975#12975: bind() to 0.0.0.0:8080 failed (98: Unknown error)
+2020/06/28 15:54:06 [emerg] 12975#12975: bind() to 0.0.0.0:8443 failed (98: Unknown error)
+2020/06/28 15:54:06 [emerg] 12975#12975: bind() to 0.0.0.0:8080 failed (98: Unknown error)
+2020/06/28 15:54:06 [emerg] 12975#12975: bind() to 0.0.0.0:8443 failed (98: Unknown error)
+2020/06/28 15:54:06 [emerg] 12975#12975: bind() to 0.0.0.0:8080 failed (98: Unknown error)
+2020/06/28 15:54:06 [emerg] 12975#12975: bind() to 0.0.0.0:8443 failed (98: Unknown error)
+2020/06/28 15:54:06 [emerg] 12975#12975: bind() to 0.0.0.0:8080 failed (98: Unknown error)
+2020/06/28 15:54:06 [emerg] 12975#12975: bind() to 0.0.0.0:8443 failed (98: Unknown error)
+2020/06/28 15:54:06 [emerg] 12975#12975: still could not bind()
+2020/06/28 15:58:51 [info] 13117#13117: *1 epoll_wait() reported that client prematurely closed connection, so upstream connection is closed too while sending request to upstream, client: 192.168.0.22, server: android-analytics.ddns.net, request: "GET /favicon.ico HTTP/1.1", upstream: "http://unix:///data/data/com.termux/files/home/android-analytics/tmp/puma/socket:/favicon.ico", host: "192.168.0.23:8080"
+2020/06/28 15:59:55 [info] 13116#13116: *4 client closed connection while waiting for request, client: 192.168.0.22, server: 0.0.0.0:8080
+2020/06/28 16:00:18 [info] 13117#13117: *5 client 192.168.0.22 closed keepalive connection
+2020/06/28 16:00:28 [info] 13117#13117: *8 client 45.236.243.194 closed keepalive connection
+2020/06/28 16:01:01 [info] 13113#13113: *11 client sent HTTP/1.1 request without "Host" header while reading client request headers, client: 42.115.62.234, server: android-analytics.ddns.net, request: "GET /admin/login.asp HTTP/1.1"
+2020/06/28 16:02:49 [info] 13207#13207: *1 epoll_wait() reported that client prematurely closed connection, so upstream connection is closed too while sending request to upstream, client: 192.168.0.22, server: android-analytics.ddns.net, request: "GET /favicon.ico HTTP/1.1", upstream: "http://unix:///data/data/com.termux/files/home/android-analytics/tmp/puma/socket:/favicon.ico", host: "192.168.0.23:8080"
+2020/06/28 16:03:45 [info] 13209#13209: *4 client 192.168.0.22 closed keepalive connection
+2020/06/28 16:05:18 [info] 13204#13204: *7 client 14.98.92.146 closed keepalive connection
+2020/06/28 16:10:28 [info] 13394#13394: *1 client 192.168.0.22 closed keepalive connection
+2020/06/28 16:23:14 [info] 13805#13805: *1 client 192.168.0.22 closed keepalive connection
+2020/06/28 16:23:41 [info] 13802#13802: *4 client 192.168.0.22 closed keepalive connection
+2020/06/28 16:26:46 [warn] 13930#13930: *10 an upstream response is buffered to a temporary file /data/data/com.termux/files/usr/var/lib/nginx/proxy/1/00/0000000001 while reading upstream, client: 192.168.0.22, server: android-analytics.ddns.net, request: "GET /assets/blazer/jquery.self-5af507e253c37e9c9dcf65064fc3f93795e6e28012780579975a4d709f4074ad.js?body=1 HTTP/1.1", upstream: "http://unix:///data/data/com.termux/files/home/android-analytics/tmp/puma/socket:/assets/blazer/jquery.self-5af507e253c37e9c9dcf65064fc3f93795e6e28012780579975a4d709f4074ad.js?body=1", host: "192.168.0.23:8080", referrer: "http://192.168.0.23:8080/blazer"
+2020/06/28 16:26:47 [warn] 13932#13932: *7 an upstream response is buffered to a temporary file /data/data/com.termux/files/usr/var/lib/nginx/proxy/2/00/0000000002 while reading upstream, client: 192.168.0.22, server: android-analytics.ddns.net, request: "GET /assets/blazer/moment-timezone-with-data.self-e07adaff28c0d26b83620f8ada97a16a5c386f4a06c68bba6d004ea3d1792da3.js?body=1 HTTP/1.1", upstream: "http://unix:///data/data/com.termux/files/home/android-analytics/tmp/puma/socket:/assets/blazer/moment-timezone-with-data.self-e07adaff28c0d26b83620f8ada97a16a5c386f4a06c68bba6d004ea3d1792da3.js?body=1", host: "192.168.0.23:8080", referrer: "http://192.168.0.23:8080/blazer"
+2020/06/28 16:26:47 [warn] 13935#13935: *1 an upstream response is buffered to a temporary file /data/data/com.termux/files/usr/var/lib/nginx/proxy/3/00/0000000003 while reading upstream, client: 192.168.0.22, server: android-analytics.ddns.net, request: "GET /assets/blazer/Chart.self-452d6b6467c857273527c60e2f3389d823cc922268b5743cbb165d8703d63aff.js?body=1 HTTP/1.1", upstream: "http://unix:///data/data/com.termux/files/home/android-analytics/tmp/puma/socket:/assets/blazer/Chart.self-452d6b6467c857273527c60e2f3389d823cc922268b5743cbb165d8703d63aff.js?body=1", host: "192.168.0.23:8080", referrer: "http://192.168.0.23:8080/blazer"
+2020/06/28 16:26:47 [warn] 13934#13934: *6 an upstream response is buffered to a temporary file /data/data/com.termux/files/usr/var/lib/nginx/proxy/4/00/0000000004 while reading upstream, client: 192.168.0.22, server: android-analytics.ddns.net, request: "GET /assets/blazer/ace/ace.self-e3e382eb47a5b97a18a8b7b37d331d8cc81670c2daf8cc36d90d5d5fe9b951e0.js?body=1 HTTP/1.1", upstream: "http://unix:///data/data/com.termux/files/home/android-analytics/tmp/puma/socket:/assets/blazer/ace/ace.self-e3e382eb47a5b97a18a8b7b37d331d8cc81670c2daf8cc36d90d5d5fe9b951e0.js?body=1", host: "192.168.0.23:8080", referrer: "http://192.168.0.23:8080/blazer"
+2020/06/28 16:26:47 [warn] 13936#13936: *4 an upstream response is buffered to a temporary file /data/data/com.termux/files/usr/var/lib/nginx/proxy/5/00/0000000005 while reading upstream, client: 192.168.0.22, server: android-analytics.ddns.net, request: "GET /assets/blazer/vue.self-f886d1e9e8861e49af87a21d19b7ae5cb98e7c3c39eee78431bd5edc87e05420.js?body=1 HTTP/1.1", upstream: "http://unix:///data/data/com.termux/files/home/android-analytics/tmp/puma/socket:/assets/blazer/vue.self-f886d1e9e8861e49af87a21d19b7ae5cb98e7c3c39eee78431bd5edc87e05420.js?body=1", host: "192.168.0.23:8080", referrer: "http://192.168.0.23:8080/blazer"
+2020/06/28 16:26:55 [info] 13930#13930: *10 epoll_wait() reported that client prematurely closed connection, so upstream connection is closed too while sending request to upstream, client: 192.168.0.22, server: android-analytics.ddns.net, request: "GET /assets/blazer/application.self-2831b278fd32dadcdc7fd09611ed4e116a5e485c000848a634b015b69ef049e3.css?body=1 HTTP/1.1", upstream: "http://unix:///data/data/com.termux/files/home/android-analytics/tmp/puma/socket:/assets/blazer/application.self-2831b278fd32dadcdc7fd09611ed4e116a5e485c000848a634b015b69ef049e3.css?body=1", host: "192.168.0.23:8080", referrer: "http://192.168.0.23:8080/blazer/queries/new"
+2020/06/28 16:26:55 [info] 13936#13936: *4 epoll_wait() reported that client prematurely closed connection, so upstream connection is closed too while sending request to upstream, client: 192.168.0.22, server: android-analytics.ddns.net, request: "GET /assets/blazer/daterangepicker.self-9e4450a60b4d6d5b4a8304ade07576767dc3f64f7653b0f95bce43bf11d854b2.css?body=1 HTTP/1.1", upstream: "http://unix:///data/data/com.termux/files/home/android-analytics/tmp/puma/socket:/assets/blazer/daterangepicker.self-9e4450a60b4d6d5b4a8304ade07576767dc3f64f7653b0f95bce43bf11d854b2.css?body=1", host: "192.168.0.23:8080", referrer: "http://192.168.0.23:8080/blazer/queries/new"
+2020/06/28 16:26:55 [info] 13935#13935: *1 client 192.168.0.22 closed keepalive connection
+2020/06/28 16:26:55 [info] 13934#13934: *6 client 192.168.0.22 closed keepalive connection
+2020/06/28 16:26:55 [info] 13932#13932: *7 client prematurely closed connection (32: Broken pipe) while sending to client, client: 192.168.0.22, server: android-analytics.ddns.net, request: "GET /assets/blazer/bootstrap.self-da50506066bdb6cedbe54070b8017b903bae03cf29844440f093c60e3e7ec474.css?body=1 HTTP/1.1", upstream: "http://unix:///data/data/com.termux/files/home/android-analytics/tmp/puma/socket/assets/blazer/bootstrap.self-da50506066bdb6cedbe54070b8017b903bae03cf29844440f093c60e3e7ec474.css?body=1", host: "192.168.0.23:8080", referrer: "http://192.168.0.23:8080/blazer/queries/new"
+2020/06/28 16:27:15 [info] 13936#13936: *12 client 192.168.0.22 closed keepalive connection
