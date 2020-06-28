@@ -1,6 +1,7 @@
 require 'digest'
 require 'geocoder'
 require 'csv'
+require 'time'
 require 'byebug'
 
 class Compiler
