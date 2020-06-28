@@ -6,6 +6,13 @@ default: &default
 # Android
 development:
   <<: *default
+  username: test
+  password: 123456
+  database: test
+  host: localhost
+
+production:
+  <<: *default
   database: android_analytics_production
   username: android_analytics
   password: <%= ENV['ANDROID_SANDBOX_DATABASE_PASSWORD'] %>
