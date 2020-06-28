@@ -12,4 +12,4 @@ mv log/nginx.access.log $LATEST_LOG_FILE
 kill -USR1 `cat $NGINX_PID`
 sleep 3
 
-$BUNDLE exec ruby -e "File.write('log/compiler.log', ''); require '$PROJECT/app/compiler'; Compiler.new("$LATEST_LOG_FILE").process"
+$BUNDLE exec ruby -e "File.write('log/compiler.log', ''); require '$PROJECT/app/compiler'; Compiler.new('$LATEST_LOG_FILE').process"
