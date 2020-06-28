@@ -1,5 +1,5 @@
 export ANDROID_SANDBOX_DATABASE_PASSWORD=42sAgV41XdHr1NMCPy0wHx4QKviTnIWQ
-# export BLAZER_DATABASE_URL=postgres://android_analytics:$ANDROID_SANDBOX_DATABASE_PASSWORD@localhost:5432/android_analytics_production
+export BLAZER_DATABASE_URL=postgres://android_analytics:$ANDROID_SANDBOX_DATABASE_PASSWORD@localhost:5432/android_analytics_production
 
 BUNDLE=`which bundle`
 PUMA=`which puma`
