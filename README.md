@@ -39,7 +39,6 @@ sudo -u postgres bash
 
 Then run `bundle exec ruby create_db.rb`
 
-## Testing POST
+## Cron
 
-Test POST/insert: `curl localhost:4567 -XPOST -d 'word=foobar'`
-
+crontab compile_logs

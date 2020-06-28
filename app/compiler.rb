@@ -28,8 +28,12 @@ class Compiler
       # TODO: OS, device
       hash[:ip] = Digest::MD5.hexdigest(hash[:ip]) # anonnymize IP
 
-      hit = Hits.create(hash)
-      errors << hit.errors.full_messages unless hit.valid?
+      hit = Hits.new(hash)
+      if hit.valid?
+        hit.save
+      else
+        errors << hit.errors.full_messages
+      end
     end
 
     if errors.any?
