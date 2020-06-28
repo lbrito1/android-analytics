@@ -29,7 +29,7 @@ class Compiler
       hash[:ip] = Digest::MD5.hexdigest(hash[:ip]) # anonnymize IP
 
       hit = Hits.create(hash)
-      errors << hit.errors.full_messages.to_sentence if hit.invalid?
+      errors << hit.errors.full_messages.to_sentence unless hit.valid?
     end
 
     if errors.any?
