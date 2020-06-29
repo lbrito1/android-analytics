@@ -15,7 +15,7 @@ production:
   <<: *default
   database: android_analytics_production
   username: android_analytics
-  password: <%= ENV['ANDROID_SANDBOX_DATABASE_PASSWORD'] %>
+  password: <%= ENV['ANDROID_DATABASE_PASSWORD'] %>
 
 test:
   <<: *default
