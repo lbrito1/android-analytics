@@ -3,7 +3,7 @@ GEM
   specs:
     awesome_print (1.8.0)
     byebug (11.1.3)
-    chronic (0.10.2)
+    dotenv (2.7.5)
     geocoder (1.6.3)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
@@ -23,8 +23,6 @@ GEM
       tilt (~> 2.0)
     sinatra-cross_origin (0.3.2)
     tilt (2.0.10)
-    whenever (1.0.0)
-      chronic (>= 0.6.3)
 
 PLATFORMS
   ruby
@@ -32,13 +30,13 @@ PLATFORMS
 DEPENDENCIES
   awesome_print!
   byebug!
+  dotenv!
   geocoder!
   pg!
   puma!
   sequel!
   sinatra!
   sinatra-cross_origin (~> 0.3.1)!
-  whenever!
 
 RUBY VERSION
    ruby 2.6.5p114
