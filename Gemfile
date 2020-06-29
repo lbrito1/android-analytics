@@ -7,7 +7,7 @@ source 'https://rubygems.org' do
   gem 'sequel'
   gem 'pg'
   gem 'geocoder'
-  gem 'whenever', require: false
+  gem 'dotenv'
 
   # debug
   gem 'byebug'
