@@ -1,8 +1,7 @@
-![Agent Cooper drinking coffee](damn_fine_coffee.gif)
+![Screenshot of the app running locally, a few charts and a map are shown](screenshot.png)
+
 > "This is a damn fine cup of coffee."
 -- Agent Cooper
-
-![Screenshot of the app running locally, a few charts and a map are shown](screenshot.png)
 
 Web analytics software so simple it runs on your phone.
 
