@@ -1,6 +1,6 @@
 ![Agent Cooper drinking coffee](damn_fine_coffee.gif)
 > "This is a damn fine cup of coffee."
-- Agent Cooper
+-- Agent Cooper
 
 Web analytics software so simple it runs on your phone.
 
