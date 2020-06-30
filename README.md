@@ -97,7 +97,12 @@ $ cd viewer
 $ bundle
 $ ./bin/run.sh
 ```
-17. Check your data by navigating to `https://<your-android-local-ip>:3000`.
+
+## Usage
+
+Check your data by navigating to `https://<your-android-local-ip>:3000`.
+
+If you want to use map charts, add your Mapbox access token to `./viewer/.env`.
 
 ## TODOs
 - [ ] Package this to make installation easier
