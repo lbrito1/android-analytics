@@ -2,6 +2,8 @@
 > "This is a damn fine cup of coffee."
 -- Agent Cooper
 
+![Screenshot of the app running locally, a few charts and a map are shown](screenshot.png)
+
 Web analytics software so simple it runs on your phone.
 
 ## What?
@@ -91,16 +93,17 @@ $ crontab -e
 0 0 * * * /data/data/com.termux/files/home/android-analytics/bin/compile_logs.sh
 ```
 15. Test if everything is working by hitting your monitored website from outside your network (e.g. with [Pingdom](https://tools.pingdom.com/)) and looking at the logs (`tail -f log/nginx.access.log`). If the request appears in the log, proceed to manually run the compiler job (`./bin/compile_logs.sh`), and finally check if the record is in Postgres (run `./bin/db.rb` to get a REPL database session, then write `puts Hits.last` to see the latest row).
-16. Set up the viewer app:
+
+## Usage
+
+Set up the viewer app:
 ```bash
 $ cd viewer
 $ bundle
 $ ./bin/run.sh
 ```
 
-## Usage
-
-Check your data by navigating to `https://<your-android-local-ip>:3000`.
+Then your data by navigating to `https://<your-android-local-ip>:3000`.
 
 If you want to use map charts, add your Mapbox access token to `./viewer/.env`.
 
