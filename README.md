@@ -4,10 +4,9 @@
 
 Web analytics software so simple it runs on your phone.
 
-## Requirements
+## What?
 
-1. An Android phone running [Termux](https://termux.com/) (recommended: set up [SSH remote access](https://wiki.termux.com/wiki/Remote_Access))
-2. A domain with verified SSL leading to your phone (see [guide](https://lbrito1.github.io/blog/2020/06/free_https_home_server.html))
+This is a web analytics tool that runs on Android devices. It registers visitors to any site you include the Javascript snippet in, and displays that data in a friendly way, accessible through a web page you can view in your local network. Its like Google Analytics, minus the ad-peddling Evil.
 
 ## How this thing works
 
@@ -18,6 +17,12 @@ If someone visits your monitored website, Javascript will hit the `/damn_fine_co
 Every day at midnight, a cron job processes the day's logs leveraging [Nginx log rotation](https://www.nginx.com/resources/wiki/start/topics/examples/logrotation/). Invalid logs (logs from sources other than the monitored domain) are discarded, IPs are annonymized using MD5 hexdigest, and high-level geo info is collected from the IPs. Each valid log entry becomes a row of the `hits` table.
 
 The `hits` table is then used by the `viewer` app and we get the final dashboards, charts etc.
+
+## Requirements
+
+1. An Android phone running [Termux](https://termux.com/) (recommended: set up [SSH remote access](https://wiki.termux.com/wiki/Remote_Access))
+2. A domain with verified SSL leading to your phone (see [guide](https://lbrito1.github.io/blog/2020/06/free_https_home_server.html))
+3. A [Mapbox](https://www.mapbox.com/) account if you want map charts
 
 ## Installation guide
 
