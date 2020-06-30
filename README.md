@@ -15,7 +15,7 @@ This is really just a glorified log viewer.
 
 If someone visits your monitored website, Javascript will hit the `/damn_fine_coffee` endpoint[1] and Nginx will create a log entry (for any other endpoint, it won't[2]).
 
-Every day at midnight, a cron job processes the day's logs leveraging [Nginx log rotation](https://www.nginx.com/resources/wiki/start/topics/examples/logrotation/). Invalid logs (logs from sources other than the monitored domain) are discareded, IPs are annonymized using MD5 hexdigest, and high-level geo info is collected from the IPs. Each valid log entry becomes a row of the `hits` table.
+Every day at midnight, a cron job processes the day's logs leveraging [Nginx log rotation](https://www.nginx.com/resources/wiki/start/topics/examples/logrotation/). Invalid logs (logs from sources other than the monitored domain) are discarded, IPs are annonymized using MD5 hexdigest, and high-level geo info is collected from the IPs. Each valid log entry becomes a row of the `hits` table.
 
 The `hits` table is then used by the `viewer` app and we get the final dashboards, charts etc.
 
@@ -31,7 +31,7 @@ $ pkg install postgresql # tested with 12.3
 $ pkg install ruby       # tested with 2.6.5
 $ gem install bundler
 ```
-3. Put your SSL keys somewhere in your phone; update `nginx.conf` if necessary with the corrrect path:
+3. Put your SSL keys somewhere in your phone; update `nginx.conf` if necessary with the correct path:
 ```
 ssl_certificate /data/data/com.termux/files/home/fullchain.pem;
 ssl_certificate_key /data/data/com.termux/files/home/privkey.pem;
