@@ -65,4 +65,5 @@ Create a free Mapbox account and add your access token to `.env`.
 ## Notes
 
 [1] Most crawlers/bots won't magically know about the `/damn_fine_coffee` endpoint without the help of a sitemap or something, so hopefully so you won't get random traffic being logged.
+
 [2] The web is full of crawlers, mostly hitting `/`, but also `/tp-link`, `/admin` etc. We want to just ignore those.
