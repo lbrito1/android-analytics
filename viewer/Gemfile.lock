@@ -60,7 +60,6 @@ GEM
       railties (>= 3.2, < 6.1)
     errbase (0.2.0)
     erubi (1.9.0)
-    geocoder (1.6.3)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.8.3)
@@ -137,7 +136,6 @@ DEPENDENCIES
   blazer
   byebug
   dotenv-rails
-  geocoder
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 5.2.4)
