@@ -22,24 +22,20 @@ The `hits` table is then used by the `viewer` app and we get the final dashboard
 ## Requirements
 
 1. An Android phone running [Termux](https://termux.com/) (recommended: set up [SSH remote access](https://wiki.termux.com/wiki/Remote_Access))
-2. A domain with verified SSL leading to your phone (see [guide](https://lbrito1.github.io/blog/2020/06/free_https_home_server.html))
-3. A port forwarding rule in your router redirecting TCP port `443` to port `8433` on your phone's local IP
-4. A [Mapbox](https://www.mapbox.com/) account if you want map charts
+2. A port forwarding rule in your router redirecting TCP port `443` to port `8433` on your phone's local IP (port `80` to `8080` if you don't want SSL)
+
+Optional:
+1. A domain with verified SSL leading to your phone (see [guide](https://lbrito1.github.io/blog/2020/06/free_https_home_server.html)) if you want/need SSL
+2. A [Mapbox](https://www.mapbox.com/) account if you want map charts
 
 ## Installation guide
 
 In your Android phone:
-1. Put your SSL keys somewhere and update `nginx.conf` if necessary with that path:
-```
-ssl_certificate /data/data/com.termux/files/home/fullchain.pem;
-ssl_certificate_key /data/data/com.termux/files/home/privkey.pem;
-```
-2. Clone this repository and `cd` into it
-3. Create your `.env` config file with `cp -n .env.template .env` and add your passwords, domains etc
-4. Run the setup script: `bash bin/setup.sh`
+1. Clone this repository and `cd` into it
+2. Create your `.env` config file with `cp -n .env.template .env` and add your passwords, domains etc
+3. Run the setup script: `bash bin/setup.sh`
 
-In the website you want to monitor:
-12. Add a call to your phone:
+In the website you want to monitor, add a call to your phone:
 ```html
   <script>
     fetch("https://my-android-domain/damn_fine_coffee");
@@ -47,6 +43,17 @@ In the website you want to monitor:
 ```
 
 15. Test if everything is working by hitting your monitored website from outside your network (e.g. with [Pingdom](https://tools.pingdom.com/)) and looking at the logs (`tail -f log/nginx.access.log`). If the request appears in the log, proceed to manually run the compiler job (`./bin/compile_logs.sh`), and finally check if the record is in Postgres (run `./bin/db.rb` to get a REPL database session, then write `puts Hits.last` to see the latest row).
+
+### Optionals
+
+#### SSL
+If you want SSL, put your SSL keys somewhere in your phone, update `nginx.conf` if necessary with that path:
+```
+ssl_certificate /data/data/com.termux/files/home/fullchain.pem;
+ssl_certificate_key /data/data/com.termux/files/home/privkey.pem;
+```
+And reload nginx with `nginx -s reload`.
+
 
 ## Usage
 
