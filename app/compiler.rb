@@ -16,7 +16,7 @@ class Compiler
   end
 
   def process
-    write_to_output("Started processing #{path}.")
+    write_to_output("Started processing #{@path}.")
     return write_to_output("No logs found.") if csv.none?
 
     errors = []
