@@ -1,7 +1,7 @@
 $WD=`pwd`
 DB_USERNAME=android_analytics
-DB_PWD=`cat .env | sed -n -e 's/^ANDROID_DATABASE_PASSWORD=//p'`
-[[ -z "$DB_PWD" ]] && { echo "Failed: ANDROID_DATABASE_PASSWORD was not found." ; exit 1; }
+DB_PWD=`cat .env | sed -n -e 's/^DB_PASSWORD=//p'`
+[[ -z "$DB_PWD" ]] && { echo "Failed: DB_PASSWORD was not found." ; exit 1; }
 
 # Copy config files
 ln -sf $WD/config/nginx.conf $PREFIX/etc/nginx/nginx.conf

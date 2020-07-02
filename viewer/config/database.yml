@@ -13,9 +13,9 @@ development:
 
 production:
   <<: *default
-  database: android_analytics_production
-  username: android_analytics
-  password: <%= ENV['ANDROID_DATABASE_PASSWORD'] %>
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
 
 test:
   <<: *default

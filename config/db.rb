@@ -2,9 +2,9 @@ require_relative 'boot'
 
 DB = Sequel.connect(
   adapter: :postgres,
-  database: 'android_analytics_production',
+  database: ENV['DB_NAME'],
   host: 'localhost',
-  user: 'android_analytics',
-  password: ENV['ANDROID_DATABASE_PASSWORD'])
+  user: ENV['DB_USERNAME'],
+  password: ENV['DB_PASSWORD'])
 
 require_relative '../app/models/hits'
