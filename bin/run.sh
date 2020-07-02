@@ -1,13 +1,16 @@
 BUNDLE=`which bundle`
 
 # Restart nginx
-killall nginx
-nginx
+if ! pgrep -x "nginx" > /dev/null
+then
+  nginx
+else
+  nginx -s reload
+fi
 
 # Restart postgresql
 if ! pgrep -x "postgres" > /dev/null
 then
-  echo "Starting postgres..."
   pg_ctl -D $PREFIX/var/lib/postgresql start
 fi
 
