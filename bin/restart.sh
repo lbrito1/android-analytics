@@ -1,4 +1,9 @@
-BUNDLE=`which bundle`
+# Restart crond
+if ! pgrep -f 'crond' >/dev/null; then
+  echo '[Starting crond...]' && crond && echo '[OK]'
+else
+  echo '[crond is running]'
+fi
 
 # Restart nginx
 if ! pgrep -x "nginx" > /dev/null
@@ -13,5 +18,3 @@ if ! pgrep -x "postgres" > /dev/null
 then
   pg_ctl -D $PREFIX/var/lib/postgresql start
 fi
-
-$BUNDLE install --path vendor/bundle

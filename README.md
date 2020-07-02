@@ -34,14 +34,9 @@ In your Android phone:
 ssl_certificate /data/data/com.termux/files/home/fullchain.pem;
 ssl_certificate_key /data/data/com.termux/files/home/privkey.pem;
 ```
-2. Clone this repository
-3. Add your passwords, domains etc in `viewer/.env`
-2. Run the setup script: `bash bin/setup.sh`
-<!-- 6. Start nginx and postgres:
-```bash
-$ ./bin/run.sh
-``` -->
-<!-- ``` -->
+2. Clone this repository and `cd` into it
+3. Create your `.env` config file with `cp -n .env.template .env` and add your passwords, domains etc
+4. Run the setup script: `bash bin/setup.sh`
 
 In the website you want to monitor:
 12. Add a call to your phone:
@@ -51,13 +46,6 @@ In the website you want to monitor:
   </script>
 ```
 
-14. Add the compiler job to your crontab:
-```bash
-$ crontab -e
-
-# Add this line:
-0 0 * * * /data/data/com.termux/files/home/android-analytics/bin/compile_logs.sh
-```
 15. Test if everything is working by hitting your monitored website from outside your network (e.g. with [Pingdom](https://tools.pingdom.com/)) and looking at the logs (`tail -f log/nginx.access.log`). If the request appears in the log, proceed to manually run the compiler job (`./bin/compile_logs.sh`), and finally check if the record is in Postgres (run `./bin/db.rb` to get a REPL database session, then write `puts Hits.last` to see the latest row).
 
 ## Usage
