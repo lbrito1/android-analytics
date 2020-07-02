@@ -34,6 +34,7 @@ In your Android phone:
 1. Clone this repository and `cd` into it
 2. Create your `.env` config file with `cp -n .env.template .env` and add your passwords, domains etc
 3. Run the setup script: `bash bin/setup.sh`
+4. Run the viewer: `./viewer/bin/run.sh`
 
 In the website you want to monitor, add a call to your phone:
 ```html
@@ -42,7 +43,10 @@ In the website you want to monitor, add a call to your phone:
   </script>
 ```
 
-15. Test if everything is working by hitting your monitored website from outside your network (e.g. with [Pingdom](https://tools.pingdom.com/)) and looking at the logs (`tail -f log/nginx.access.log`). If the request appears in the log, proceed to manually run the compiler job (`./bin/compile_logs.sh`), and finally check if the record is in Postgres (run `./bin/db.rb` to get a REPL database session, then write `puts Hits.last` to see the latest row).
+In your desktop (must be in the same network as your phone):
+Access your monitored website from outside your network (e.g. with [Pingdom](https://tools.pingdom.com/)) and run `tail -f log/nginx.access.log` on your phone.
+
+If the request appears in the log, then nginx is working. Next step is manually running the compiler job (`./bin/compile_logs.sh`); you should then have that same request now in the DB. Go to `http://<your-phones-local-ip>:3000` and you should see that request in the dashboard! 🎉
 
 ### Optionals
 
@@ -54,23 +58,9 @@ ssl_certificate_key /data/data/com.termux/files/home/privkey.pem;
 ```
 And reload nginx with `nginx -s reload`.
 
+#### Mapbox
 
-## Usage
-
-Set up the viewer app:
-```bash
-$ cd viewer
-$ bundle
-$ ./bin/run.sh
-```
-
-Then your data by navigating to `https://<your-android-local-ip>:3000`.
-
-If you want to use map charts, add your Mapbox access token to `./viewer/.env`.
-
-## TODOs
-- [ ] Package this to make installation easier
-- [ ] Clean up old logs
+Create a free Mapbox account and add your access token to `.env`.
 
 ## Notes
 
