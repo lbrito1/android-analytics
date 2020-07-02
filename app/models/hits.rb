@@ -1,5 +1,5 @@
 class Hits < Sequel::Model
-  VALID_DOMAINS=%w(lbrito1.github.io enpassant.tk)
+  VALID_DOMAINS = ENV['VALID_DOMAINS'].split(',')
 
   def validate
     super

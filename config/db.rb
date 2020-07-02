@@ -1,5 +1,4 @@
-require 'sequel'
-require 'byebug'
+require_relative 'boot'
 
 DB = Sequel.connect(
   adapter: :postgres,

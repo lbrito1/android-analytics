@@ -23,67 +23,34 @@ The `hits` table is then used by the `viewer` app and we get the final dashboard
 
 1. An Android phone running [Termux](https://termux.com/) (recommended: set up [SSH remote access](https://wiki.termux.com/wiki/Remote_Access))
 2. A domain with verified SSL leading to your phone (see [guide](https://lbrito1.github.io/blog/2020/06/free_https_home_server.html))
-3. A [Mapbox](https://www.mapbox.com/) account if you want map charts
+3. A port forwarding rule in your router redirecting TCP port `443` to port `8433` on your phone's local IP
+4. A [Mapbox](https://www.mapbox.com/) account if you want map charts
 
 ## Installation guide
 
 In your Android phone:
-1. Create a port forwarding rule in your router redirecting requests to TCP port `443` to your phone's port `8433`
-2. Install Nginx, Postgres, Ruby and Bundler:
-```bash
-$ pkg update
-$ pkg install nginx      # tested with 1.17.8
-$ pkg install postgresql # tested with 12.3
-$ pkg install ruby       # tested with 2.6.5
-$ gem install bundler
-```
-3. Put your SSL keys somewhere in your phone; update `nginx.conf` if necessary with the correct path:
+1. Put your SSL keys somewhere and update `nginx.conf` if necessary with that path:
 ```
 ssl_certificate /data/data/com.termux/files/home/fullchain.pem;
 ssl_certificate_key /data/data/com.termux/files/home/privkey.pem;
 ```
-4. Clone this repository
-5. Give execution permission to the helper scripts:
-```bash
-$ chmod +x ./bin/*
-$ chmod +x ./viewer/bin/*
-```
-6. Start nginx and postgres:
+2. Clone this repository
+3. Add your passwords, domains etc in `viewer/.env`
+2. Run the setup script: `bash bin/setup.sh`
+<!-- 6. Start nginx and postgres:
 ```bash
 $ ./bin/run.sh
-```
-7. Create a password for your database and update `viewer/.env` with it:
-```bash
-ANDROID_DATABASE_PASSWORD=replace_me_with_real_key
-```
-8. Create the `android_analytics` Postgres user with the same password you chose in the previous step:
-```bash
-$ createuser --interactive --pwprompt
-...
-```
-9. Create the `hits` database:
-```bash
-$ bundle exec ruby ./tasks/run_migrations.rb
-```
-10. Create the `blazer` databases (used for data visualization):
-```
-$ bundle exec viewer/rails db:setup
-```
-11. Fill the `VALID_DOMAINS` constant in `app/models/hits.rb` with the domains you expect to monitor
-12. Add a call to your phone in the web page you're monitoring:
+``` -->
+<!-- ``` -->
+
+In the website you want to monitor:
+12. Add a call to your phone:
 ```html
   <script>
     fetch("https://my-android-domain/damn_fine_coffee");
   </script>
 ```
-13. Add `crond` to your `bash_profile` or `bashrc`:
-```bash
-if ! pgrep -f "crond" >/dev/null; then
-echo "[Starting crond...]" && crond && echo "[OK]"
-else
-echo "[crond is running]"
-fi
-```
+
 14. Add the compiler job to your crontab:
 ```bash
 $ crontab -e
