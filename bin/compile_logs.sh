@@ -6,7 +6,7 @@ cd $PROJECT
 
 
 mkdir -p log/old
-TIMESTAMP=`date '+%s'`
+TIMESTAMP=$(date +%Y%m%d_%H%M%S%Z)
 LATEST_LOG_FILE=log/old/nginx.access.log.$TIMESTAMP
 
 # logrotate
