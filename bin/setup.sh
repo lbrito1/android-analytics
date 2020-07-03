@@ -11,7 +11,7 @@ chmod +x ./bin/* || { echo "Failed: giving exec permission to bin/" ; exit 1; }
 chmod +x ./viewer/bin/* || { echo "Failed: giving exec permission to bin/" ; exit 1; }
 
 # Install dependencies: nginx 1.17.8 postgresql 12.3 ruby 2.6.5
-pkg update || { echo "Failed: pkg update" ; exit 1; } -y
+pkg update -y || { echo "Failed: pkg update" ; exit 1; }
 pkg install nginx && pkg install postgresql -y && pkg install ruby -y \
   || { echo "Failed: pkg installs" ; exit 1; }
 
