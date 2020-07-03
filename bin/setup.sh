@@ -1,10 +1,9 @@
-$WD=`pwd`
+WD=`pwd`
 DB_USERNAME=android_analytics
 DB_PWD=`cat .env | sed -n -e 's/^DB_PASSWORD=//p'`
 [[ -z "$DB_PWD" ]] && { echo "Failed: DB_PASSWORD was not found." ; exit 1; }
 
 # Copy config files
-ln -sf $WD/config/nginx.conf $PREFIX/etc/nginx/nginx.conf
 ln -sf $WD/.env $WD/viewer/.env
 
 # Add exec permissions to scripts
@@ -15,6 +14,9 @@ chmod +x ./viewer/bin/* || { echo "Failed: giving exec permission to bin/" ; exi
 pkg update || { echo "Failed: pkg update" ; exit 1; }
 pkg install nginx && pkg install postgresql && pkg install ruby \
   || { echo "Failed: pkg installs" ; exit 1; }
+
+# Adds nginx config
+ln -sf $WD/config/nginx.conf $PREFIX/etc/nginx/nginx.conf
 
 gem install bundler || { echo "Failed: gem install bundler" ; exit 1; }
 BUNDLE=`which bundle`
