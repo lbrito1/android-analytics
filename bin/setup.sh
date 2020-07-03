@@ -12,8 +12,7 @@ chmod +x ./viewer/bin/* || { echo "Failed: giving exec permission to bin/" ; exi
 
 # Install dependencies: nginx 1.17.8 postgresql 12.3 ruby 2.6.5
 pkg update -y || { echo "Failed: pkg update" ; exit 1; }
-pkg install nginx && pkg install postgresql -y && pkg install ruby -y \
-  || { echo "Failed: pkg installs" ; exit 1; }
+pkg install nginx postgresql ruby debianutils -y || { echo "Failed: pkg installs" ; exit 1; }
 
 # Adds nginx config
 ln -sf $WD/config/nginx.conf $PREFIX/etc/nginx/nginx.conf
