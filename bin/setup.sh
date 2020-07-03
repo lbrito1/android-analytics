@@ -20,15 +20,15 @@ ln -sf $WD/config/nginx.conf $PREFIX/etc/nginx/nginx.conf
 gem install bundler || { echo "Failed: gem install bundler" ; exit 1; }
 BUNDLE=`which bundle`
 
-# Start Postgres
+# Init skeleton db
+initdb $PREFIX/var/lib/postgresql
 mkdir -p $PREFIX/var/lib/postgresql
+
+# Start Postgres
 if ! pgrep -x "postgres" > /dev/null
 then
   pg_ctl -D $PREFIX/var/lib/postgresql start || { echo "Failed: starting postgresql" ; exit 1; }
 fi
-
-# Init skeleton db
-initdb $PREFIX/var/lib/postgresql
 
 # Create postgres user
 PSQL_SUPERUSER=`whoami`
