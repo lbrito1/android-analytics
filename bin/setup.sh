@@ -30,9 +30,9 @@ then
   pg_ctl -D $PREFIX/var/lib/postgresql start || { echo "Failed: starting postgresql" ; exit 1; }
 fi
 
-# Create postgres user
+# Create postgres user if it doesnt exist already
 PSQL_SUPERUSER=`whoami`
-psql -U $PSQL_SUPERUSER postgres -c "CREATE USER $DB_USERNAME password '$DB_PWD';" \
+psql -U $PSQL_SUPERUSER postgres -tAc "SELECT 1 FROM pg_roles WHERE rolname='$DB_USERNAME'" | grep -q 1 || "CREATE USER $DB_USERNAME password '$DB_PWD';" \
   || { echo "Failed: creating db user" ; exit 1; }
 
 # Prepare Nokogiri dependencies -- https://nokogiri.org/tutorials/installing_nokogiri.html#termux
