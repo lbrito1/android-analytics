@@ -19,7 +19,7 @@ Annonymized visits are stored in your phone. Later they're compiled into charts,
 ![diagram](diagram.png)
 This is really just a glorified log viewer.
 
-When someone visits your website, Javascript hits the `/damn_fine_coffee` endpoint[1] and Nginx creates a log entry (for any other endpoint, it won't[2]).
+When someone visits your website, Javascript hits the `/damn_fine_coffee` endpoint[1] and Nginx creates a log entry (it doesn't log other endpoints[2]).
 
 Every day at around midnight, a cron job processes the day's logs[3]. Invalid logs (requests from non-monitored domains) are discarded, IPs are annonymized using MD5 hashing, and geo info (city-level) is calculated from the IPs. Each valid log entry becomes a row of the `hits` table.
 
