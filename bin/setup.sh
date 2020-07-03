@@ -21,10 +21,14 @@ gem install bundler || { echo "Failed: gem install bundler" ; exit 1; }
 BUNDLE=`which bundle`
 
 # Start Postgres
+mkdir -p $PREFIX/var/lib/postgresql
 if ! pgrep -x "postgres" > /dev/null
 then
   pg_ctl -D $PREFIX/var/lib/postgresql start || { echo "Failed: starting postgresql" ; exit 1; }
 fi
+
+# Init skeleton db
+initdb $PREFIX/var/lib/postgresql
 
 # Create postgres user
 PSQL_SUPERUSER=`whoami`
