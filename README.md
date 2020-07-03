@@ -19,7 +19,7 @@ When someone visits your website, Javascript hits the `/damn_fine_coffee` endpoi
 
 Every day at around midnight, a cron job processes the day's logs leveraging [Nginx log rotation](https://www.nginx.com/resources/wiki/start/topics/examples/logrotation/). Invalid logs (requests from non-monitored domains) are discarded, IPs are annonymized using MD5 hexdigest, and high-level geo info is collected from the IPs. Each valid log entry becomes a row of the `hits` table.
 
-The `hits` table is then used by the `viewer` app and we get the final dashboards, charts etc.
+The `hits` table is then used by the `viewer` app and we get the final dashboards, charts etc. The viewer app is based on the excellent [blazer](https://github.com/ankane/blazer) gem, so read their documentation if you want to add more charts or dashboards.
 
 ## Requirements
 
