@@ -35,6 +35,10 @@ PSQL_SUPERUSER=`whoami`
 psql -U $PSQL_SUPERUSER postgres -c "CREATE USER $DB_USERNAME password '$DB_PWD';" \
   || { echo "Failed: creating db user" ; exit 1; }
 
+# Prepare Nokogiri dependencies -- https://nokogiri.org/tutorials/installing_nokogiri.html#termux
+pkg install ruby clang make pkg-config libxslt -y
+gem install nokogiri -- --use-system-libraries
+
 ./viewer/bin/setup || { echo "Failed: Rails setup" ; exit 1; }
 
 # Adds cron, postgres and nginx init to bash file
