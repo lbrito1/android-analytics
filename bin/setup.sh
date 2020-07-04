@@ -39,7 +39,7 @@ mkdir -p log
 $WD/bin/restart.sh || { echo "Failed: starting nginx or postgres." ; exit 1; }
 if ! pgrep -x "nginx" > /dev/null
 then
-  echo "Failed: starting nginx. If you don't have SSL certs, remove ssl-related settings from config/nginx.conf." ; exit 1;
+  echo "Failed: starting nginx. If you don't have SSL certs, remove ssl-related settings from config/nginx.conf (listen 8443 ssl; ssl_certificate and ssl_certificate_key)." ; exit 1;
 else
   nginx -s reload
 fi
