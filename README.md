@@ -38,7 +38,7 @@ Optional:
 
 In your Android phone:
 1. Clone this repository and `cd` into it;
-2. Create your `.env` config file with `cp -n .env.template .env` and add your passwords, domains etc;
+2. Create your `.env` config file with `cp -n .env.template .env` and add your passwords, domains etc. If you don't have a SSL certificate, comment out the SSL-related parts of `config/nginx.conf` (more on that in the _About SSL_ section below);
 3. Run the setup script: `bash bin/setup.sh`;
 
 In the website you want to monitor, add a call to your phone:
