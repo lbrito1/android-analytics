@@ -1,7 +1,7 @@
 WD=`pwd`
 
 # DB settings
-source $WD/db_envs.sh
+source $WD/bin/db_envs.sh
 
 # Copy config files
 ln -sf $WD/.env $WD/viewer/.env

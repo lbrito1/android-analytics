@@ -5,10 +5,10 @@ conn.exec_query <<-SQL
 -- Data for Name: blazer_dashboard_queries; Type: TABLE DATA; Schema: public; Owner: android_analytics
 --
 
-COPY public.blazer_dashboard_queries (id, dashboard_id, query_id, "position", created_at, updated_at) FROM stdin;
-3 1 4 0 2020-06-30 23:08:01.022309  2020-06-30 23:24:44.010583
-1 1 3 1 2020-06-30 00:26:34.899173  2020-06-30 23:24:44.031887
-2 1 2 2 2020-06-30 00:26:34.923882  2020-06-30 23:24:44.168245
+COPY public.blazer_dashboard_queries (id, dashboard_id, query_id, "position", created_at, updated_at) FROM stdin; \
+3 1 4 0 2020-06-30 23:08:01.022309  2020-06-30 23:24:44.010583 \
+1 1 3 1 2020-06-30 00:26:34.899173  2020-06-30 23:24:44.031887 \
+2 1 2 2 2020-06-30 00:26:34.923882  2020-06-30 23:24:44.168245 \
 \.
 
 
