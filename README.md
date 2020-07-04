@@ -65,7 +65,7 @@ ssl_certificate_key /data/data/com.termux/files/home/privkey.pem;
 ```
 Then reload nginx with `nginx -s reload`.
 
-If you don't want to use SSL, just comment out the SSL-related parts of `nginx.conf` to stop getting warning messages from nginx.
+If you don't want to use SSL, you'll need to comment out the SSL-related parts of `nginx.conf` and run `.bin/restart.sh` to get Nginx working.
 
 ## Notes
 
