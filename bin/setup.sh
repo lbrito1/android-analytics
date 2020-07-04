@@ -35,7 +35,13 @@ mkdir -p $PREFIX/var/lib/postgresql
 
 # Start Postgres and Nginx
 echo -e $(date -u) "\t[Starting postgres and nginx]"
-$WD/bin/restart.sh || { echo "Failed: starting nginx. If you don't have SSL certs, remove ssl-related settings from config/nginx.conf." ; exit 1; }
+$WD/bin/restart.sh || { echo "Failed: starting nginx or postgres." ; exit 1; }
+if ! pgrep -x "nginx" > /dev/null
+then
+  echo "Failed: starting nginx. If you don't have SSL certs, remove ssl-related settings from config/nginx.conf." ; exit 1;
+else
+  nginx -s reload
+fi
 
 # Create postgres user
 echo -e $(date -u) "\t[Creating Postgres user]"
