@@ -5,8 +5,7 @@ class Hits < Sequel::Model
     super
     errors.add(:domain, 'is invalid') if VALID_DOMAINS.none? { |domain| url.match?(domain) }
 
-    byebug
-    time_overlap = ((created_at - 2.5)..(created_at + 2.5))
+    time_overlap = ((created_at - 2)..(created_at + 2))
     similar_reqs = self.class.where(ip: ip, created_at: time_overlap)
 
     errors.add(:ip, 'too many requests') if similar_reqs.count > 10
