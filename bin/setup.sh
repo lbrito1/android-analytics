@@ -1,4 +1,5 @@
 WD=`pwd`
+DB_NAME=`cat .env | sed -n -e 's/^DB_NAME=//p'`
 DB_USERNAME=`cat .env | sed -n -e 's/^DB_USERNAME=//p'`
 DB_PWD=`cat .env | sed -n -e 's/^DB_PASSWORD=//p'`
 [[ -z "$DB_PWD" ]] && { echo "Failed: DB_PASSWORD was not found." ; exit 1; }
@@ -37,8 +38,12 @@ psql -U $PSQL_SUPERUSER postgres -tAc "SELECT 1 FROM pg_roles WHERE rolname='$DB
  || { echo "Failed: creating db user" ; exit 1; }
 
 # Prepare Nokogiri dependencies -- https://nokogiri.org/tutorials/installing_nokogiri.html#termux
-pkg install ruby clang make pkg-config libxslt -y
-gem install nokogiri -- --use-system-libraries
+if [ ! -d "gem list | grep nokogiri" ]; then
+  pkg install ruby clang make pkg-config libxslt -y
+  gem install nokogiri -- --use-system-libraries
+else
+  echo "Nokogiri already installed, skipping..."
+fi
 
 RAILS_ENV=production ./viewer/bin/setup || { echo "Failed: Rails setup" ; exit 1; }
 
