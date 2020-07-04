@@ -81,4 +81,4 @@ crontab crontab_tmp
 rm crontab_tmp
 
 echo -e $(date -u) "\t[android-analytics installation finished.]"
-echo -e "\n\>nEvery day, once a day, give yourself a present.\n\n"
+echo -e "\n\n\"Every day, once a day, give yourself a present.\"\n\n"
