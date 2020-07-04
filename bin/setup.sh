@@ -45,7 +45,7 @@ psql -U $PSQL_SUPERUSER postgres -tAc "SELECT 1 FROM pg_database WHERE datname =
 # Add permissions
 psql -U $PSQL_SUPERUSER postgres -c "GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO $DB_USERNAME;" \
   || { echo "Failed: granting privileges on table" ; exit 1; }
-psql -U $PSQL_SUPERUSER postgres -c "GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO $DB_USERNAME; GRANT `whoami` to `$DB_USERNAME`" \
+psql -U $PSQL_SUPERUSER postgres -c "GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO $DB_USERNAME; GRANT `whoami` to $DB_USERNAME" \
   || { echo "Failed: granting privileges on sequences" ; exit 1; }
 
 # Prepare Nokogiri dependencies -- https://nokogiri.org/tutorials/installing_nokogiri.html#termux
