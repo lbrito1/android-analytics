@@ -1,7 +1,7 @@
 WD=`pwd`
 
 # DB settings
-source .env
+source $WD/.env
 [[ -z "$DB_NAME" ]] && { echo "Failed: DB_NAME was not found." ; exit 1; }
 [[ -z "$DB_USERNAME" ]] && { echo "Failed: DB_USERNAME was not found." ; exit 1; }
 [[ -z "$DB_PWD" ]] && { echo "Failed: DB_PWD was not found." ; exit 1; }
