@@ -69,7 +69,9 @@ cat $WD/bin/restart.sh >> $HOME/.bash_profile || { echo "Failed: adding services
 
 # Adds log compilation job to crontab
 COMPILE_LOG_JOB="\n# Added by android-analytics bin/setup.sh script\n59 23 * * * $WD/bin/compile_logs.sh"
-CRONTAB="$(crontab -l)\n$COMPILE_LOG_JOB"
-echo $CRONTAB | crontab -
+crontab -l > crontab_tmp
+echo $COMPILE_LOG_JOB >> crontab_tmp
+crontab crontab_tmp
+rm crontab_tmp
 
 echo "Every day, once a day, give yourself a present."
