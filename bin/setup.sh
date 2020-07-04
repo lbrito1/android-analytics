@@ -57,10 +57,10 @@ if [ -z "$HAS_NOKOGIRI" ]; then
   pkg install ruby clang make pkg-config libxslt -y
   gem install nokogiri -- --use-system-libraries
 else
-  echo "Nokogiri already installedm skipping..."
+  echo "Nokogiri already installed, skipping..."
 fi
 
-RAILS_ENV=production ./viewer/bin/setup || { echo "Failed: Rails setup" ; exit 1; }
+DISABLE_DATABASE_ENVIRONMENT_CHECK=1 RAILS_ENV=production ./viewer/bin/setup || { echo "Failed: Rails setup" ; exit 1; }
 
 # Adds cron, postgres and nginx init to bash file
 cat $WD/bin/restart.sh >> $HOME/.bash_profile || { echo "Failed: adding services to bash_profile" ; exit 1; }
