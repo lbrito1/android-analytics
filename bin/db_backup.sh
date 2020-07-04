@@ -3,6 +3,6 @@ source .env
 [[ -z "$DB_USERNAME" ]] && { echo "Failed: DB_USERNAME was not found." ; exit 1; }
 [[ -z "$DB_PASSWORD" ]] && { echo "Failed: DB_PASSWORD was not found." ; exit 1; }
 
-pg_dump -U $DB_USERRNAME --data-only --column-inserts -t blazer_queries > ../backup.sql
+pg_dump -U $DB_USERNAME --data-only --column-inserts -t blazer_queries > ../backup.sql
 
 
