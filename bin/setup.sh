@@ -4,7 +4,7 @@ WD=`pwd`
 source $WD/.env
 [[ -z "$DB_NAME" ]] && { echo "Failed: DB_NAME was not found." ; exit 1; }
 [[ -z "$DB_USERNAME" ]] && { echo "Failed: DB_USERNAME was not found." ; exit 1; }
-[[ -z "$DB_PWD" ]] && { echo "Failed: DB_PWD was not found." ; exit 1; }
+[[ -z "$DB_PASSWORD" ]] && { echo "Failed: DB_PASSWORD was not found." ; exit 1; }
 
 # Copy config files
 ln -sf $WD/.env $WD/viewer/.env
@@ -36,7 +36,7 @@ fi
 # Create postgres user
 PSQL_SUPERUSER=`whoami`
 psql -U $PSQL_SUPERUSER postgres -tAc "SELECT 1 FROM pg_roles WHERE rolname='$DB_USERNAME'" | grep -q 1 \
- || psql -U $PSQL_SUPERUSER postgres -c "CREATE USER $DB_USERNAME password '$DB_PWD';" \
+ || psql -U $PSQL_SUPERUSER postgres -c "CREATE USER $DB_USERNAME password '$DB_PASSWORD';" \
  || { echo "Failed: creating db user" ; exit 1; }
 
 # # Create postgres database
