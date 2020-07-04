@@ -53,9 +53,11 @@ psql -U $PSQL_SUPERUSER postgres -c "ALTER USER $DB_USERNAME CREATEDB;" \
 
 # Prepare Nokogiri dependencies -- https://nokogiri.org/tutorials/installing_nokogiri.html#termux
 HAS_NOKOGIRI=$(gem list | grep nokogiri)
-if [ -n "$HAS_NOKOGIRI" ]; then
+if [ -z "$HAS_NOKOGIRI" ]; then
   pkg install ruby clang make pkg-config libxslt -y
   gem install nokogiri -- --use-system-libraries
+else
+  echo "Nokogiri already installedm skipping..."
 fi
 
 RAILS_ENV=production ./viewer/bin/setup || { echo "Failed: Rails setup" ; exit 1; }
