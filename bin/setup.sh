@@ -26,7 +26,7 @@ ln -sf $WD/config/nginx.conf $PREFIX/etc/nginx/nginx.conf
 
 echo -e $(date -u) "\t[Installing Ruby gem dependencies]"
 gem install bundler || { echo -e $(date -u) "\t[Error] Failed gem install bundler" ; exit 1; }
-BUNDLE=`which bundle`
+bundle install
 
 # Init skeleton db
 echo -e $(date -u) "\t[Initializing skeleton db]"
