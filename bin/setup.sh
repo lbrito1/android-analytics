@@ -1,5 +1,5 @@
 WD=`pwd`
-DB_USERNAME=android_analytics
+DB_USERNAME=`cat .env | sed -n -e 's/^DB_USERNAME=//p'`
 DB_PWD=`cat .env | sed -n -e 's/^DB_PASSWORD=//p'`
 [[ -z "$DB_PWD" ]] && { echo "Failed: DB_PASSWORD was not found." ; exit 1; }
 
@@ -40,7 +40,7 @@ psql -U $PSQL_SUPERUSER postgres -tAc "SELECT 1 FROM pg_roles WHERE rolname='$DB
 pkg install ruby clang make pkg-config libxslt -y
 gem install nokogiri -- --use-system-libraries
 
-./viewer/bin/setup || { echo "Failed: Rails setup" ; exit 1; }
+RAILS_ENV=production ./viewer/bin/setup || { echo "Failed: Rails setup" ; exit 1; }
 
 # Adds cron, postgres and nginx init to bash file
 cat $WD/bin/restart.sh >> $HOME/.bash_profile || { echo "Failed: adding services to bash_profile" ; exit 1; }
