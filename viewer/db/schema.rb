@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_28_173455) do
+ActiveRecord::Schema.define(version: 2020_07_04_165317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,7 +70,22 @@ ActiveRecord::Schema.define(version: 2020_06_28_173455) do
     t.index ["creator_id"], name: "index_blazer_queries_on_creator_id"
   end
 
-  create_table "hits", force: :cascade do |t|
+  create_table "hits", id: :integer, default: nil, force: :cascade do |t|
+    t.datetime "created_at"
+    t.string "url", limit: 256
+    t.string "ip", limit: 32
+    t.string "user_agent", limit: 256
+    t.string "country", limit: 128
+    t.string "region", limit: 128
+    t.string "city", limit: 128
+    t.string "device", limit: 32
+    t.string "os", limit: 32
+    t.decimal "lat"
+    t.decimal "long"
+    t.index ["created_at", "ip"], name: "index_hits_on_created_at_and_ip"
+  end
+
+  create_table "hits_tables", force: :cascade do |t|
     t.string "url", limit: 256
     t.string "ip", limit: 32
     t.string "user_agent", limit: 256
@@ -82,7 +97,14 @@ ActiveRecord::Schema.define(version: 2020_06_28_173455) do
     t.decimal "lat", precision: 10, scale: 6
     t.decimal "long", precision: 10, scale: 6
     t.datetime "created_at"
-    t.index ["created_at", "ip"], name: "index_hits_on_created_at_and_ip"
+  end
+
+  create_table "schema_info", id: false, force: :cascade do |t|
+    t.integer "version", default: 0, null: false
+  end
+
+  create_table "test_entry", id: :integer, default: nil, force: :cascade do |t|
+    t.text "test_string"
   end
 
 end
