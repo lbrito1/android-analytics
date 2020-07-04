@@ -6,6 +6,15 @@ Web analytics software so simple it runs on your phone.
 > "This is a damn fine cup of coffee."
 -- Agent Cooper
 
+## Table of Contents
+* [About](#about)
+* [How this works](#how-this-works)
+* [Requirements](#requirements)
+* [Installation](#installation)
+   * [About SSL](#about-ssl)
+* [Notes](#notes)
+
+
 ## About
 
 This is a web analytics tool that runs on Android devices. Its like Google Analytics, minus the ad-peddling Evil. And _you_ keep your data.
