@@ -50,11 +50,11 @@ All set! Now if you access your monitored website from outside your network (e.g
 
 Next step is to manually run the compiler job (`./bin/compile_logs.sh`), which will send that request to the DB (by default it is ran daily at 23:59 -- just run it manually once to see if everything is OK).
 
-Now go to `http://<your-phones-local-ip>:3000` and you should see that request in the dashboard! 🎉
+Now run `./viewer/bin/run.sh` to start the viewer app. Open `http://<your-phones-local-ip>:3000` and you should see some data the dashboard. 🎉
 
 ![Screenshot of the app running locally, a few charts and a map are shown](screenshot.png)
 
-#### About SSL
+### About SSL
 
 This project supports SSL certificates. If you intend to use this to count e.g. your personal Github Pages page's traffic, you'll need one. Don't worry, its free and reasonably easy to get. I wrote a guide [here](https://lbrito1.github.io/blog/2020/06/free_https_home_server.html) that will help you.
 
