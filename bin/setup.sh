@@ -1,5 +1,5 @@
 WD=`pwd`
-DB_USERNAME=`cat .env | sed -n -e 's/^DB_USERNAME=//p'`
+DB_USERNAME=android_analytics
 DB_PWD=`cat .env | sed -n -e 's/^DB_PASSWORD=//p'`
 [[ -z "$DB_PWD" ]] && { echo "Failed: DB_PASSWORD was not found." ; exit 1; }
 
@@ -30,16 +30,17 @@ then
   pg_ctl -D $PREFIX/var/lib/postgresql start || { echo "Failed: starting postgresql" ; exit 1; }
 fi
 
-# Create postgres user if it doesnt exist already
+# Create postgres user
 PSQL_SUPERUSER=`whoami`
-psql -U $PSQL_SUPERUSER postgres -tAc "SELECT 1 FROM pg_roles WHERE rolname='$DB_USERNAME'" | grep -q 1 || "CREATE USER $DB_USERNAME password '$DB_PWD';" \
-  || { echo "Failed: creating db user" ; exit 1; }
+psql -U $PSQL_SUPERUSER postgres -tAc "SELECT 1 FROM pg_roles WHERE rolname='$DB_USERNAME'" | grep -q 1 \
+ || psql -U $PSQL_SUPERUSER postgres -c "CREATE USER $DB_USERNAME password '$DB_PWD';" \
+ || { echo "Failed: creating db user" ; exit 1; }
 
 # Prepare Nokogiri dependencies -- https://nokogiri.org/tutorials/installing_nokogiri.html#termux
 pkg install ruby clang make pkg-config libxslt -y
 gem install nokogiri -- --use-system-libraries
 
-RAILS_ENV=production ./viewer/bin/setup || { echo "Failed: Rails setup" ; exit 1; }
+./viewer/bin/setup || { echo "Failed: Rails setup" ; exit 1; }
 
 # Adds cron, postgres and nginx init to bash file
 cat $WD/bin/restart.sh >> $HOME/.bash_profile || { echo "Failed: adding services to bash_profile" ; exit 1; }
