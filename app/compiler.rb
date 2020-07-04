@@ -20,6 +20,7 @@ class Compiler
     return write_to_output("No logs found.") if csv.none?
 
     errors = []
+    db_rows = 0
     csv.each do |row|
       hash = row.to_h.slice(:ip, :created_at, :url, :user_agent)
       hash[:created_at] = Time.strptime((hash[:created_at].to_f * 1000).to_s, '%Q')
@@ -32,6 +33,7 @@ class Compiler
       hit = Hits.new(hash)
       if hit.valid?
         hit.save
+        db_rows += 1
       else
         errors << hit.errors.full_messages
       end
@@ -43,7 +45,7 @@ class Compiler
       write_to_output(error_msg)
     end
 
-    write_to_output("Wrote #{csv.count} rows to DB.")
+    write_to_output("Proccessed #{csv.count} rows, created #{db_rows} DB rows.\n")
   end
 
   private
