@@ -50,7 +50,7 @@ All set! Now if you access your monitored website from outside your network (e.g
 
 Next step is to manually run the compiler job (`./bin/compile_logs.sh`), which will send that request to the DB (by default it is ran daily at 23:59 -- just run it manually once to see if everything is OK).
 
-Now run `./viewer/bin/run.sh` to start the viewer app. Open `http://<your-phones-local-ip>:3000` and you should see some data the dashboard. 🎉
+Now run `./viewer/bin/run.sh` to start the viewer app (it will take a while the first time because of gem installatios). Open `http://<your-phones-local-ip>:3000`, click on one of the charts and you should see some data! 🎉
 
 ![Screenshot of the app running locally, a few charts and a map are shown](screenshot.png)
 
