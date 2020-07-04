@@ -33,12 +33,9 @@ echo -e $(date -u) "\t[Initializing skeleton db]"
 initdb $PREFIX/var/lib/postgresql
 mkdir -p $PREFIX/var/lib/postgresql
 
-# Start Postgres
-echo -e $(date -u) "\t[Starting Postgres]"
-if ! pgrep -x "postgres" > /dev/null
-then
-  pg_ctl -D $PREFIX/var/lib/postgresql start || { echo "Failed: starting postgresql" ; exit 1; }
-fi
+# Start Postgres and Nginx
+echo -e $(date -u) "\t[Starting postgres and nginx]"
+$WD/bin/restart.sh || { echo "Failed: starting nginx. If you don't have SSL certs, remove ssl-related settings from config/nginx.conf." ; exit 1; }
 
 # Create postgres user
 echo -e $(date -u) "\t[Creating Postgres user]"
