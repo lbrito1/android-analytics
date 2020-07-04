@@ -1,5 +1,5 @@
 WD=`pwd`
-DB_USERNAME=android_analytics
+DB_USERNAME=`cat .env | sed -n -e 's/^DB_USERNAME=//p'`
 DB_PWD=`cat .env | sed -n -e 's/^DB_PASSWORD=//p'`
 [[ -z "$DB_PWD" ]] && { echo "Failed: DB_PASSWORD was not found." ; exit 1; }
 
@@ -32,7 +32,7 @@ fi
 
 # Create postgres user if it doesnt exist already
 PSQL_SUPERUSER=`whoami`
-psql -U $PSQL_SUPERUSER postgres -tAc "SELECT 1 FROM pg_roles WHERE rolname='$DB_USERNAME'" | grep -q 1 || "CREATE USER $DB_USERNAME password '$DB_PWD';" \
+psql -U $PSQL_SUPERUSER postgres -tAc "SELECT 1 FROM pg_roles WHERE rolename='$DB_USERNAME'" | grep -q 1 || "CREATE USER $DB_USERNAME password '$DB_PWD';" \
   || { echo "Failed: creating db user" ; exit 1; }
 
 # Prepare Nokogiri dependencies -- https://nokogiri.org/tutorials/installing_nokogiri.html#termux
