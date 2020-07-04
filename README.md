@@ -63,7 +63,7 @@ Now run `./viewer/bin/run.sh` to start the viewer app (it will take a while the 
 
 ### About SSL
 
-This project supports SSL certificates. If you intend to use this to count e.g. your personal Github Pages page's traffic, you'll need one. Don't worry, its free and reasonably easy to get. I wrote a guide [here](https://lbrito1.github.io/blog/2020/06/free_https_home_server.html) that will help you.
+Nginx, used in this project, supports SSL certificates. If you want to use this to count e.g. your personal Github Pages page's traffic, you'll a valid SSL certificate. Good news is they're free and reasonably easy to get. I wrote a guide [here](https://lbrito1.github.io/blog/2020/06/free_https_home_server.html) that will help you.
 
 After you have your SSL keys, put them somewhere in your phone and update `nginx.conf` if necessary with the paths:
 ```
