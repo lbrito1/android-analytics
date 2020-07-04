@@ -37,6 +37,17 @@ psql -U $PSQL_SUPERUSER postgres -tAc "SELECT 1 FROM pg_roles WHERE rolname='$DB
  || psql -U $PSQL_SUPERUSER postgres -c "CREATE USER $DB_USERNAME password '$DB_PWD';" \
  || { echo "Failed: creating db user" ; exit 1; }
 
+# Create postgres database
+psql -U $PSQL_SUPERUSER postgres -tAc "SELECT 1 FROM pg_database WHERE datname = '$DB_NAME'" | grep -q 1 \
+ || psql -U $PSQL_SUPERUSER postgres -c "CREATE DATABASE $DB_NAME;" \
+ || { echo "Failed: creating db" ; exit 1; }
+
+# Add permissions
+psql -U $PSQL_SUPERUSER postgres -c "GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO $DB_USERNAME;" \
+  || { echo "Failed: granting privileges on table" ; exit 1; }
+psql -U $PSQL_SUPERUSER postgres -c "GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO $DB_USERNAME;" \
+  || { echo "Failed: granting privileges on sequences" ; exit 1; }
+
 # Prepare Nokogiri dependencies -- https://nokogiri.org/tutorials/installing_nokogiri.html#termux
 if [ ! -d "gem list | grep nokogiri" ]; then
   pkg install ruby clang make pkg-config libxslt -y
