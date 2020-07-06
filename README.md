@@ -17,6 +17,8 @@ Web analytics software so simple it runs on your phone.
 
 ## About
 
+**Here's an [in-depth blog post](https://lbrito1.github.io/blog/2020/07/replacing_google_analytics_android.html) about this project.**
+
 This is a web analytics tool that runs on Android devices. Its like Google Analytics, minus the ad-peddling Evil. And _you_ keep your data.
 
 In short, you add a line of Javascript calling your phone. That's it. Annonymized visits are stored in your phone. Later they're compiled into charts, counters and so on which you can view in a web page (accessible only in your local network).
