@@ -24,6 +24,8 @@ It's really just a glorified nginx log visualization tool. Annonymized visits ar
 
 ## How this works
 
+![diagram](diagram.png)
+
 When someone visits your website, Javascript sends a `GET <ngrok-domain>/damn_fine_coffee`[1]. Ngrok will redirect that to your phone, in which Nginx will create a log entry (it doesn't log other endpoints[1]).
 
 Every day a cron job processes the day's logs[2]. Invalid logs (duplicated requests or requests originating from non-monitored domains) are discarded, IPs are annonymized using MD5 hashing, and geo info (city-level) is calculated from the IPs. Each valid log entry becomes a row of the `hits` table.
