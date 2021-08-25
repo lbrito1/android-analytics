@@ -1,2 +1,0 @@
-class Hits < ApplicationRecord
-end

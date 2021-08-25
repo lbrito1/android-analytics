@@ -51,14 +51,22 @@ psql -U $PSQL_SUPERUSER postgres -tAc "SELECT 1 FROM pg_roles WHERE rolname='$DB
  || psql -U $PSQL_SUPERUSER postgres -c "CREATE USER $DB_USERNAME password '$DB_PASSWORD';" \
  || { echo -e $(date -u) "\t[Error] Failed creating db user" ; exit 1; }
 
-# Add permissions
+
+# Add createdb permissions
 echo -e $(date -u) "\t[Adding permissions to Postgres user]"
+psql -U $PSQL_SUPERUSER postgres -c "ALTER USER $DB_USERNAME CREATEDB;" \
+  || { echo -e $(date -u) "\t[Error] Failed alter user with createdb" ; exit 1; }
+psql -U $PSQL_SUPERUSER postgres -c "CREATEDB $DB_NAME;"
+
+# Create table
+psql -U $PSQL_SUPERUSER postgres -c $DB_NAME < "$WD/db/structure.sql" $DB_USERNAME \
+  || { echo -e $(date -u) "\t[Error] Failed creating tables" ; exit 1; }
+
+# Add table permission
 psql -U $PSQL_SUPERUSER postgres -c "GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO $DB_USERNAME;" \
   || { echo -e $(date -u) "\t[Error] Failed granting privileges on table" ; exit 1; }
 psql -U $PSQL_SUPERUSER postgres -c "GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO $DB_USERNAME;" \
   || { echo -e $(date -u) "\t[Error] Failed granting privileges on sequences" ; exit 1; }
-psql -U $PSQL_SUPERUSER postgres -c "ALTER USER $DB_USERNAME CREATEDB;" \
-  || { echo -e $(date -u) "\t[Error] Failed alter user with createdb" ; exit 1; }
 
 # Prepare Nokogiri dependencies -- https://nokogiri.org/tutorials/installing_nokogiri.html#termux
 echo -e $(date -u) "\t[Preparing Nokogiri gem]"
