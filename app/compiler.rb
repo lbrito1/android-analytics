@@ -11,7 +11,7 @@ class Compiler
   OUTPUT_FILE = './log/compiler.output'
 
   def initialize(path)
-    Geocoder.configure(timeout: 10)
+    Geocoder.configure(timeout: 10, ip_lookup: :ipapi_com)
     @path = path
   end
 
@@ -60,6 +60,8 @@ class Compiler
       lat:  geo.latitude,
       long:  geo.longitude,
     }
+
+    sleep 0.5
   end
 
   def csv
