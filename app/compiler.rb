@@ -53,6 +53,8 @@ class Compiler
   def geo_info(ip)
     return unless (geo = Geocoder.search(ip).first)
 
+    sleep 0.5
+
     {
       country:  geo.country,
       region:  geo.region,
@@ -60,8 +62,6 @@ class Compiler
       lat:  geo.latitude,
       long:  geo.longitude,
     }
-
-    sleep 0.5
   end
 
   def csv
