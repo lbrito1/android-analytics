@@ -28,7 +28,12 @@ class Compiler
       hash = row.to_h.slice(:ip, :created_at, :url, :user_agent)
       hash[:created_at] = Time.strptime((hash[:created_at].to_f * 1000).to_s, '%Q')
 
-      geo = geo_info(hash[:ip])
+      begin
+        geo = geo_info(hash[:ip])
+      rescue => e
+        puts "Geocoder error #{e.inspect}"
+        errors << e.inspect
+      end
       hash.merge!(geo) if geo
       # TODO: OS, device
       hash[:ip] = Digest::MD5.hexdigest(hash[:ip]) # anonnymize IP
