@@ -16,6 +16,8 @@ Web analytics software so simple it runs on your phone.
 
 ## About
 
+![Screenshot of the app running locally, a few charts and a map are shown](screenshot.png)
+
 **Here's an [in-depth blog post](https://lbrito1.github.io/blog/2020/07/replacing_google_analytics_android.html) about this project.**
 
 This is a web analytics tool that runs on Android devices. If you're just curious about who visits your personal page, this might be good enough for you.
@@ -25,6 +27,7 @@ It's really just a glorified nginx log visualization tool. Annonymized visits ar
 ## How this works
 
 ![diagram](diagram.png)
+
 
 When someone visits your website, Javascript sends a `GET <ngrok-domain>/damn_fine_coffee`[1]. Ngrok will redirect that to your phone, in which Nginx will create a log entry (it doesn't log other endpoints[1]).
 
@@ -53,8 +56,6 @@ All set! Run `tail -f log/nginx.access.log` on your phone and try visiting your 
 Next step is to manually run the compiler job (`./bin/compile_logs.sh`), which will send that request to the DB (by default it is ran daily at 23:59 -- just run it manually once to see if everything is OK).
 
 Open `http://<your-phones-local-ip>:3000` to open Grafana and create some charts! 🎉
-
-![Screenshot of the app running locally, a few charts and a map are shown](screenshot.png)
 
 ## Notes
 
